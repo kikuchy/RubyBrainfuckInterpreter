@@ -22,7 +22,7 @@ class BF
 				# "."のとき
 				when 46 then
 					@outBuf += sprintf("%c", @x[@xc])
-					#STDOUT.putc @x[@xc]
+					STDOUT.putc @x[@xc]
 				# ","のとき
 				when 44 then
 					p ">>"
@@ -84,7 +84,6 @@ ARGV.each{|filename|
 	bf = BF.new
 	command = fp.read
 	bf.apply(command)
-	print bf.getResult
 	if bf.getSnap then
 		print "\n\n======== STDOUT Snapshots ========\n"
 		print bf.getSnap
